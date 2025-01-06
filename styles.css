@@ -1,0 +1,66 @@
+:root {
+    --blue: rgb(0, 179, 255);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: roboto, 'Open Sans', 'Helvetica', sans-serif;
+}
+
+body {
+    background-color: rgb(235, 235, 235);
+}
+
+header {
+    background-color: var(--blue);
+    color: aliceblue;
+    text-align: center;
+    padding: 16px;
+    font-size: clamp(1.2rem, 2vw, 3rem);
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.add-task {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: var(--blue);
+}
+
+input[type="text"] {
+    width: 90%;
+    height: 42px;
+    font-size: 1.5rem;
+    overflow: scroll;
+    padding: 6px;
+    border: none;
+}
+
+.add-task-btn {
+    border: none;
+    width: max(10%, 8ch);
+    height: 42px;
+    font-size: 1.2rem;
+    background-color: rgb(235, 235, 235);
+    color: rgb(77, 77, 77);
+}
+
+.add-task-btn:hover, .add-task-btn:active {
+    background-color: rgb(220, 220, 220);
+}
+
+.add-task-btn:active {
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
