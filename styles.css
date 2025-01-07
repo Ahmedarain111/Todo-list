@@ -54,22 +54,25 @@ input[type="text"] {
     font-size: 1.2rem;
     background-color: rgb(235, 235, 235);
     color: rgb(77, 77, 77);
+    cursor: pointer;
 }
 
-.add-task-btn:hover, .add-task-btn:active {
+.add-task-btn:hover {
     background-color: rgb(220, 220, 220);
 }
 
 .add-task-btn:active {
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(200, 200, 200);
 }
 
 .task {
     font-size: 1.4rem;
     height: 16px;
     transition: 0.1s;
+    cursor: pointer;
 }
 
 .task:hover {
     background-color: gray;
 }
+
