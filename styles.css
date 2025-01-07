@@ -64,3 +64,12 @@ input[type="text"] {
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.task {
+    font-size: 1.4rem;
+    height: 16px;
+    transition: 0.1s;
+}
+
+.task:hover {
+    background-color: gray;
+}
