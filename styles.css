@@ -79,3 +79,17 @@ input[type="text"] {
     background-color: gray;
 }
 
+.remove {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover svg {
+    stroke: red; /* Change color on hover */
+}
+
