@@ -91,16 +91,6 @@ ul > :nth-child(-n+2) {
     grid-row: 2;
 }
 
-
-input[type="text"] {
-    width: 90%;
-    height: 42px;
-    font-size: 1.5rem;
-    overflow: scroll;
-    padding: 6px;
-    border: none;
-}
-
 .add-task {
     padding: 4px 12px;
     
