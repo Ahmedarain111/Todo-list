@@ -8,7 +8,7 @@
 body {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 6fr;
     
     /*For sidebabr height to be full */
     position: relative;
