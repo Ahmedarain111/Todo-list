@@ -141,25 +141,3 @@ input[type="text"] {
 .task:hover {
     background-color: rgb(201, 201, 201) !important;
 }
-
-.task-name {
-    max-width: 90%;
-}
-
-.remove {
-    background: none;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.remove:hover svg {
-    stroke: white;
-}
-
-button:hover {
-    background-color: red;
-}
