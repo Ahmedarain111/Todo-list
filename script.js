@@ -5,6 +5,7 @@ class Task {
         this.priority = priority;
         this.date = date;
         this.status = status;
+        this.id = Date.now();
     }
 
     toggleStatus() {
