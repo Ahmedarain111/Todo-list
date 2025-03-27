@@ -13,3 +13,14 @@ class Task {
     }
 }
 
+class TaskList {
+    constructor() {
+        tasks = [];
+        const taskContainer = document.querySelector('.tasks-list');
+    }
+
+    addTask(title, desc, priority, date, status = false) {
+        tasks.append(Task(title, desc, priority, date, status));
+    }
+}
+
