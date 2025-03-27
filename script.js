@@ -21,5 +21,9 @@ class TaskList {
     addTask(title, desc, priority, date, status = false) {
         tasks.append(Task(title, desc, priority, date, status));
     }
+
+    removeTask(id) {
+        this.tasks = this.tasks.filter(task => task.id !== id)
+    }
 }
 
