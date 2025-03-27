@@ -26,5 +26,23 @@ class TaskList {
     removeTask(id) {
         this.tasks = this.tasks.filter(task => task.id !== id)
     }
+
+    displayTasks() {
+        for(let t in tasks) {
+            const task = document.createElement('div');
+            const taskLeft = document.createElement('div');
+            const status = document.createElement('span');
+            const title = document.createElement('span');
+            const remove = document.createElement('span');
+
+
+            if (t.status = true) status.textContent = '✅'
+            else status.textContent = '❌';
+
+            title.textContent = t.title;
+
+            remove.textContent = ''
+        }
+    }
 }
 
