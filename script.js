@@ -1,9 +1,9 @@
 class Task {
-    constructor(title, desc, priority, date, status=false) {
+    constructor(title, desc, priority, dateTime, status=false) {
         this.title = title;
         this.desc = desc;
         this.priority = priority;
-        this.date = date;
+        this.dateTime = dateTime;
         this.status = status;
         this.id = Date.now();
     }
@@ -19,8 +19,8 @@ class TaskList {
         const taskContainer = document.querySelector('.tasks-list');
     }
 
-    addTask(title, desc, priority, date, status = false) {
-        tasks.append(Task(title, desc, priority, date, status));
+    addTask(title, desc, priority, dateTime, status = false) {
+        tasks.append(Task(title, desc, priority, dateTime, status));
     }
 
     removeTask(id) {
