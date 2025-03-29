@@ -46,12 +46,27 @@ class TaskList {
             taskLeft.appendChild(status);
             taskLeft.appendChild(title);
 
-            
+
             task.appendChild(taskLeft);
             task.appendChild(remove);
 
             taskContainer.appendChild(task);
         }
     }
+}
+
+
+// BUTTON
+const addButton = document.querySelector('.add-task');
+addButton.addEventListener('click', () => {
+    openModal();
+});
+
+function openModal() {
+    document.querySelector('.modal').style.display = 'block';
+}
+
+function closeModal() {
+    document.querySelector('.modal').style.display = 'none';
 }
 
