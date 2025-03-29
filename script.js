@@ -40,8 +40,17 @@ class TaskList {
             else status.textContent = '❌';
 
             title.textContent = t.title;
+            remove.textContent = '🗑️';
 
-            remove.textContent = ''
+
+            taskLeft.appendChild(status);
+            taskLeft.appendChild(title);
+
+            
+            task.appendChild(taskLeft);
+            task.appendChild(remove);
+
+            taskContainer.appendChild(task);
         }
     }
 }
