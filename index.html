@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,38 @@
         <h1></h1>
         <div class="tasks-list"></div>
     </div>
-    
+
+    <div class="modal">
+        <span>Add Task</span>
+        <br>
+        <hr>
+
+        <form action="">
+            <div class="form-left">
+                <label for="title">Title:
+                    <input type="text" name="title" id="title" required>
+                </label>
+                <label for="desc">Description:
+                    <textarea name="desc" id="desc"></textarea>
+                </label>
+            </div>
+
+            <div class="form-right">
+                <label for="priority">Priority
+                    <label for="low"><input type="radio" name="low" id="low"></label>
+                    <label for="low"><input type="radio" name="low" id="low"></label>
+                    <label for="low"><input type="radio" name="low" id="low"></label>
+                </label>
+
+                <label for="date">Date:
+                    <input type="datetime" name="dateTime" id="Time">
+                </label>
+            </div>
+
+            <button type="submit">Add</button>
+        </form>
+
+    </div>
 </body>
 
 </html>
