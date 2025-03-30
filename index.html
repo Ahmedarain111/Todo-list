@@ -34,29 +34,37 @@
             </span>
             <form action="">
                 <div class="inputs">
+                    
                     <div class="form-left">
-                        <label for="title">Title:
+                        <label for="title">Title:<br>
                             <input type="text" name="title" id="title" required>
                         </label>
-                        <label for="desc">Description:
+                        <label for="desc">Description:<br>
                             <textarea name="desc" id="desc"></textarea>
                         </label>
                     </div>
 
+                    
                     <div class="form-right">
-                        <label for="priority">Priority
-                            <label for="low"><input type="radio" name="low" id="low">Low</label>
-                            <label for="low"><input type="radio" name="low" id="low">Medium</label>
-                            <label for="low"><input type="radio" name="low" id="low">High</label>
+                        <label>Priority:<br>
+                            <div class="priority-group">
+                                <label for="low"><input type="radio" name="priority" id="low" value="low"> Low</label>
+                                <label for="medium"><input type="radio" name="priority" id="medium" value="medium">
+                                    Medium</label>
+                                <label for="high"><input type="radio" name="priority" id="high" value="high">
+                                    High</label>
+                            </div>
                         </label>
 
-                        <label for="date">Date:
-                            <input type="date" name="date" id="Time">
+                        <label for="date">Date:<br>
+                            <input type="date" name="date" id="date">
                         </label>
                     </div>
                 </div>
+
                 <button type="submit">Add</button>
             </form>
+
         </div>
     </div>
 </body>
