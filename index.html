@@ -33,27 +33,28 @@
                 <hr>
             </span>
             <form action="">
-                <div class="form-left">
-                    <label for="title">Title:
-                        <input type="text" name="title" id="title" required>
-                    </label>
-                    <label for="desc">Description:
-                        <textarea name="desc" id="desc"></textarea>
-                    </label>
+                <div class="inputs">
+                    <div class="form-left">
+                        <label for="title">Title:
+                            <input type="text" name="title" id="title" required>
+                        </label>
+                        <label for="desc">Description:
+                            <textarea name="desc" id="desc"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="form-right">
+                        <label for="priority">Priority
+                            <label for="low"><input type="radio" name="low" id="low">Low</label>
+                            <label for="low"><input type="radio" name="low" id="low">Medium</label>
+                            <label for="low"><input type="radio" name="low" id="low">High</label>
+                        </label>
+
+                        <label for="date">Date:
+                            <input type="date" name="date" id="Time">
+                        </label>
+                    </div>
                 </div>
-
-                <div class="form-right">
-                    <label for="priority">Priority
-                        <label for="low"><input type="radio" name="low" id="low">Low</label>
-                        <label for="low"><input type="radio" name="low" id="low">Medium</label>
-                        <label for="low"><input type="radio" name="low" id="low">High</label>
-                    </label>
-
-                    <label for="date">Date:
-                        <input type="datetime" name="dateTime" id="Time">
-                    </label>
-                </div>
-
                 <button type="submit">Add</button>
             </form>
         </div>
