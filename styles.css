@@ -137,6 +137,7 @@ ul > :nth-child(-n+2) {
 }
 
 .modal {
+    display: none !important;
     position: fixed;
     z-index: 1000;
     left: 0;
