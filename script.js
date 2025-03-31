@@ -16,11 +16,11 @@ class Task {
 class TaskList {
     constructor() {
         this.tasks = [];
-        const taskContainer = document.querySelector('.tasks-list');
+        this.taskContainer = document.querySelector('.tasks-list');
     }
 
     addTask(title, desc, priority, date, status = false) {
-        tasks.append(Task(title, desc, priority, date, status));
+        this.tasks.append(Task(title, desc, priority, date, status));
         displayTasks()
     }
 
