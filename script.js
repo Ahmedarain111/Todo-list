@@ -20,13 +20,13 @@ class TaskList {
     }
 
     addTask(title, desc, priority, date, status = false) {
-        this.tasks.append(new Task(title, desc, priority, date, status));
-        displayTasks()
+        this.tasks.push(new Task(title, desc, priority, date, status));
+        this.displayTasks()
     }
 
     removeTask(id) {
         this.tasks = this.tasks.filter(task => task.id !== id)
-        displayTasks();
+        this.displayTasks();
     }
 
     displayTasks() {
