@@ -62,6 +62,8 @@ addButton.addEventListener('click', () => {
     openModal();
 });
 
+
+// MODAL
 function openModal() {
     document.querySelector('.modal').style.display = 'flex';
 }
