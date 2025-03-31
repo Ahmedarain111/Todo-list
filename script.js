@@ -20,7 +20,7 @@ class TaskList {
     }
 
     addTask(title, desc, priority, date, status = false) {
-        this.tasks.append(Task(title, desc, priority, date, status));
+        this.tasks.append(new Task(title, desc, priority, date, status));
         displayTasks()
     }
 
