@@ -78,3 +78,20 @@ window.onclick = function (event) {
     }
 };
 
+// FORM
+document.querySelector('form').addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const title = document.querySelector('#title').value;
+    const desc = document.querySelector('#desc').vale;
+    const priority = document.querySelector("input[name='priority']:checked")?.value;
+    const date = document.querySelector('#date').value;
+
+    tasksList.addTask(title, desc, priority, date);
+});
+
+
+
+
+
+const tasksList = new TaskList();
