@@ -1,5 +1,5 @@
 class Task {
-    constructor(title, desc, priority, date, status=false) {
+    constructor(title, desc, priority, date, status = false) {
         this.title = title;
         this.desc = desc;
         this.priority = priority;
@@ -28,7 +28,7 @@ class TaskList {
     }
 
     displayTasks() {
-        for(let t in tasks) {
+        for (let t in tasks) {
             const task = document.createElement('div');
             const taskLeft = document.createElement('div');
             const status = document.createElement('span');
@@ -69,4 +69,10 @@ function openModal() {
 function closeModal() {
     document.querySelector('.modal').style.display = 'none';
 }
+
+window.onclick = function (event) {
+    if (event.target === document.querySelector('.modal')) {
+        closeModal();
+    }
+};
 
