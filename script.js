@@ -52,7 +52,7 @@ class TaskList {
             task.appendChild(taskLeft);
             task.appendChild(remove);
 
-            taskContainer.appendChild(task);
+            this.taskContainer.appendChild(task);
         }
     }
 }
