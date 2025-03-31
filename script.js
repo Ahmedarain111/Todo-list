@@ -30,7 +30,7 @@ class TaskList {
     }
 
     displayTasks() {
-        for (let t in tasks) {
+        for (let t of this.tasks) {
             const task = document.createElement('div');
             const taskLeft = document.createElement('div');
             const status = document.createElement('span');
