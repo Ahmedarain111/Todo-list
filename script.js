@@ -90,6 +90,9 @@ document.querySelector('form').addEventListener("submit", function (event) {
     const date = document.querySelector('#date').value;
 
     tasksList.addTask(title, desc, priority, date);
+
+    document.querySelector('form').reset();
+    closeModal();
 });
 
 
