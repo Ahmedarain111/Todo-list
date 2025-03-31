@@ -63,7 +63,7 @@ addButton.addEventListener('click', () => {
 });
 
 function openModal() {
-    document.querySelector('.modal').style.display = 'block';
+    document.querySelector('.modal').style.display = 'flex';
 }
 
 function closeModal() {
