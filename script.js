@@ -15,7 +15,7 @@ class Task {
 
 class TaskList {
     constructor() {
-        tasks = [];
+        this.tasks = [];
         const taskContainer = document.querySelector('.tasks-list');
     }
 
