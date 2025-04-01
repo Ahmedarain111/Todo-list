@@ -17,6 +17,7 @@ class TaskList {
     constructor() {
         this.tasks = [];
         this.taskContainer = document.querySelector('.tasks-list');
+        this.view = "home";
     }
 
     addTask(title, desc, priority, date, status = false) {
@@ -30,13 +31,19 @@ class TaskList {
     }
 
     displayTasks() {
-        for (let t of this.tasks) {
+        let list = [];
+
+        if (this.view === "today") {
+            const today = new Date().toISOString().slice(0, 10).replace(/-/g, '-');
+            list = this.tasks.filter(task => task.date === today);
+        }
+
+        for (let t of list) {
             const task = document.createElement('div');
             const taskLeft = document.createElement('div');
             const status = document.createElement('span');
             const title = document.createElement('span');
             const remove = document.createElement('span');
-
 
             if (t.status === true) status.textContent = '✅'
             else status.textContent = '❌';
