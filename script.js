@@ -1,5 +1,5 @@
 class Task {
-    constructor(title, desc, priority, date, status = false, project) {
+    constructor(title, desc, priority, date, project) {
         this.title = title;
         this.desc = desc;
         this.priority = priority;
@@ -17,8 +17,8 @@ class TaskList {
         this.view = "home";
     }
 
-    addTask(title, desc, priority, date, status = false) {
-        this.tasks.push(new Task(title, desc, priority, date, status));
+    addTask(title, desc, priority, date, project) {
+        this.tasks.push(new Task(title, desc, priority, date, project));
         this.displayTasks()
     }
 
@@ -87,8 +87,9 @@ document.querySelector('form').addEventListener("submit", function (event) {
     const desc = document.querySelector('#desc').value;
     const priority = document.querySelector("input[name='priority']:checked")?.value;
     const date = document.querySelector('#date').value;
+    const project = document.querySelector('#project');
 
-    tasksList.addTask(title, desc, priority, date);
+    tasksList.addTask(title, desc, priority, date, project);
 
     document.querySelector('form').reset();
     closeModal();
