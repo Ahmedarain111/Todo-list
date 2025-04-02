@@ -42,7 +42,7 @@ class TaskList {
             const remove = document.createElement('span');
 
             title.textContent = t.title;
-            remove.textContent = '🗑️';
+            remove.textContent = '✔️';
 
 
             taskLeft.appendChild(status);
