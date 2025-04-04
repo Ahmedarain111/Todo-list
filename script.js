@@ -34,7 +34,7 @@ class TaskList {
         if (this.view === "today") {
             const today = new Date().toISOString().slice(0, 10).replace(/-/g, '-');
             list = this.tasks.filter(task => task.date === today);
-        } else if(this.view === "home") {
+        } else if (this.view === "home") {
             list = this.tasks;
         } else {
             list = this.tasks.filter(task => task.project === this.view);
@@ -46,17 +46,63 @@ class TaskList {
             const title = document.createElement('span');
             const remove = document.createElement('span');
 
+            const dropdown = document.createElement('div');
+            dropdown.classList.add('task-dropdown');
+
+            const dueDate = document.createElement('p');
+            dueDate.innerHTML = `<b>Due Date:</b> ${t.date}`;
+
+            const priority = document.createElement('p');
+            priority.innerHTML = `<b>Priority:</b> ${t.priority}`;
+
+            const desc = document.createElement('p');
+            desc.innerHTML = `<b>Description:</b> ${t.desc}`;
+
+            dropdown.appendChild(dueDate);
+            dropdown.appendChild(priority);
+            dropdown.appendChild(desc);
+
             title.textContent = t.title;
             remove.textContent = '✔️';
-            remove.classList.add('task-button')
+            remove.style.cursor = 'pointer';
+            remove.classList.add('task-button');
             remove.addEventListener('click', () => this.removeTask(t.id));
 
             taskLeft.appendChild(title);
-
             task.appendChild(taskLeft);
             task.appendChild(remove);
 
+            task.appendChild(dropdown);
+
             task.classList.add('task');
+
+            
+            task.addEventListener('mouseover', () => {
+                dropdown.style.opacity = '1';
+                dropdown.style.transform = 'translateY(0)';
+
+
+                const dropdownHeight = dropdown.offsetHeight + 10;
+
+                let nextTask = task.nextElementSibling;
+                while (nextTask) {
+                    nextTask.style.transition = 'transform 0.3s ease';
+                    nextTask.style.transform = `translateY(${dropdownHeight}px)`;
+                    nextTask = nextTask.nextElementSibling;
+                }
+            });
+
+            task.addEventListener('mouseout', () => {
+                dropdown.style.opacity = '0';
+                dropdown.style.transform = 'translateY(-10px)';
+
+                let nextTask = task.nextElementSibling;
+                while (nextTask) {
+                    nextTask.style.transition = 'transform 0.3s ease';
+                    nextTask.style.transform = 'translateY(0)';
+                    nextTask = nextTask.nextElementSibling;
+                }
+            });
 
             this.taskContainer.appendChild(task);
         }
