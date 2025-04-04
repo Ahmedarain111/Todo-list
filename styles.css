@@ -124,8 +124,8 @@ ul > :nth-child(-n+2) {
     align-items: stretch;
 }
 
-.task-list div:nth-child(even) {
-    background-color: rgb(224, 224, 224);
+.tasks-list div:nth-child(even) {
+    background-color: rgb(241, 241, 241);
 }
 
 .task {
@@ -138,10 +138,6 @@ ul > :nth-child(-n+2) {
     box-sizing: border-box;
     border-bottom: 1px solid #ddd;
     
-}
-
-.task:hover {
-    background-color: rgb(201, 201, 201) !important;
 }
 
 .modal {
