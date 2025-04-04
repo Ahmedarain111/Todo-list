@@ -48,6 +48,7 @@ class TaskList {
 
             title.textContent = t.title;
             remove.textContent = '✔️';
+            remove.classList.add('task-button')
             remove.addEventListener('click', () => this.removeTask(t.id));
 
             taskLeft.appendChild(title);
