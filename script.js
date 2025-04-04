@@ -48,7 +48,7 @@ class TaskList {
 
             title.textContent = t.title;
             remove.textContent = '✔️';
-
+            remove.addEventListener('click', () => this.removeTask(t.id));
 
             taskLeft.appendChild(title);
 
@@ -68,8 +68,6 @@ const addButton = document.querySelector('.add-task');
 addButton.addEventListener('click', () => {
     openModal();
 });
-
-
 
 // MODAL
 function openModal() {
