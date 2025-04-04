@@ -55,6 +55,8 @@ class TaskList {
             task.appendChild(taskLeft);
             task.appendChild(remove);
 
+            task.classList.add('task');
+
             this.taskContainer.appendChild(task);
         }
     }
@@ -66,6 +68,7 @@ const addButton = document.querySelector('.add-task');
 addButton.addEventListener('click', () => {
     openModal();
 });
+
 
 
 // MODAL
