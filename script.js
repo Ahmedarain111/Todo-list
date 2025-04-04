@@ -4,7 +4,7 @@ class Task {
         this.desc = desc;
         this.priority = priority;
         this.date = date;
-        this.status = status;
+        this.status = false;
         this.project = project
         this.id = Date.now();
     }
@@ -28,11 +28,16 @@ class TaskList {
     }
 
     displayTasks() {
+        this.taskContainer.innerHTML = '';
         let list = [];
 
         if (this.view === "today") {
             const today = new Date().toISOString().slice(0, 10).replace(/-/g, '-');
             list = this.tasks.filter(task => task.date === today);
+        } else if(this.view === "home") {
+            list = this.tasks;
+        } else {
+            list = this.tasks.filter(task => task.project === this.view);
         }
 
         for (let t of list) {
@@ -45,7 +50,6 @@ class TaskList {
             remove.textContent = '✔️';
 
 
-            taskLeft.appendChild(status);
             taskLeft.appendChild(title);
 
             task.appendChild(taskLeft);
@@ -87,7 +91,7 @@ document.querySelector('form').addEventListener("submit", function (event) {
     const desc = document.querySelector('#desc').value;
     const priority = document.querySelector("input[name='priority']:checked")?.value;
     const date = document.querySelector('#date').value;
-    const project = document.querySelector('#project');
+    const project = document.querySelector('#project').value;
 
     tasksList.addTask(title, desc, priority, date, project);
 
