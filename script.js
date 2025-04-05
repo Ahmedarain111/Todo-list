@@ -121,13 +121,13 @@ const todayButton = document.querySelector('#today');
 homeButton.addEventListener('click', () => {
     tasksList.view = "home";
     tasksList.displayTasks();
-    document.querySelector('.tasks-container h1').textContent = "home";
+    document.querySelector('.tasks-container h1').textContent = "Home";
 });
 
 todayButton.addEventListener('click', () => {
     tasksList.view = "today";
     tasksList.displayTasks();
-    document.querySelector('.tasks-container h1').textContent = "home";
+    document.querySelector('.tasks-container h1').textContent = "Today";
 });
 
 // MODAL
