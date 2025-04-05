@@ -116,6 +116,21 @@ addButton.addEventListener('click', () => {
     openModal();
 });
 
+const homeButton = document.querySelector('#home');
+const todayButton = document.querySelector('#today');
+
+homeButton.addEventListener('click', () => {
+    tasksList.view = "home";
+    tasksList.displayTasks();
+    document.querySelector('.tasks-container h1').textContent = "home";
+});
+
+todayButton.addEventListener('click', () => {
+    tasksList.view = "today";
+    tasksList.displayTasks();
+    document.querySelector('.tasks-container h1').textContent = "home";
+});
+
 // MODAL
 function openModal() {
     document.querySelector('.modal').style.display = 'flex';

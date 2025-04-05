@@ -95,6 +95,15 @@ ul > :nth-child(-n+2) {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.tasks-container h1 {
+    font-size: 2.5rem;
+}
+
+.tasks-container hr {
+    width: 100%;
 }
 
 .add-task {
