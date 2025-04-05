@@ -42,7 +42,6 @@ class TaskList {
 
         for (let t of list) {
             const task = document.createElement('div');
-            const taskLeft = document.createElement('div');
             const title = document.createElement('span');
             const remove = document.createElement('span');
 
@@ -68,8 +67,8 @@ class TaskList {
             remove.classList.add('task-button');
             remove.addEventListener('click', () => this.removeTask(t.id));
 
-            taskLeft.appendChild(title);
-            task.appendChild(taskLeft);
+            
+            task.appendChild(title);
             task.appendChild(remove);
 
             task.appendChild(dropdown);
