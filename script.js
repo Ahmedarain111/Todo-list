@@ -117,6 +117,7 @@ addButton.addEventListener('click', () => {
 
 const homeButton = document.querySelector('#home');
 const todayButton = document.querySelector('#today');
+const addProjectButton = document.querySelector('#add-project');
 
 homeButton.addEventListener('click', () => {
     tasksList.view = "home";
@@ -128,6 +129,10 @@ todayButton.addEventListener('click', () => {
     tasksList.view = "today";
     tasksList.displayTasks();
     document.querySelector('.tasks-container h1').textContent = "Today";
+});
+
+addProjectButton.addEventListener('click', () => {
+    document.querySelector('.project-modal').style.display = 'flex';
 });
 
 // MODAL
@@ -142,6 +147,10 @@ function closeModal() {
 window.onclick = function (event) {
     if (event.target === document.querySelector('.modal')) {
         closeModal();
+    }
+
+    if (event.target === document.querySelector('.project-modal')) {
+        document.querySelector('.project-modal').style.display = 'none';
     }
 };
 
@@ -159,6 +168,21 @@ document.querySelector('form').addEventListener("submit", function (event) {
 
     document.querySelector('form').reset();
     closeModal();
+});
+
+document.querySelector('.add-project-btn').addEventListener('click', () => {
+    const list = document.querySelector('.projects-list');
+    const project = document.createElement('li');
+    
+    project.textContent = document.querySelector('#project-name').value;
+    list.appendChild(project);
+
+    const projectInput = document.querySelector('#project');
+    const projectOption = document.createElement('option')
+    projectOption.textContent = project.textContent;
+    projectInput.appendChild(projectOption);
+    
+    document.querySelector('.project-modal').style.display = 'none';
 });
 
 

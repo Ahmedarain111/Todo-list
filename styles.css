@@ -75,14 +75,12 @@ ul > :nth-child(-n+2) {
     background-color: #c2c2c2;
 }
 
-.project-list {
-    font-size: 1rem;
-    font-weight: normal; 
-
-    padding-left: 8px;
+.projects-list, #add-project {
+    font-size: 1.3rem !important;
+    font-weight: normal !important; 
     margin-left: 16px;
-
-    color: gray;
+    color: rgb(76, 76, 76);
+    cursor: pointer;
 }
 
 /* MAIN */
@@ -265,7 +263,7 @@ textarea {
     gap: 5px;
 }
 
-form > button {
+form > button, .modal-content button {
     display: block;
     width: 100%;
     padding: 12px;
