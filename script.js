@@ -44,6 +44,7 @@ class TaskList {
             const task = document.createElement('div');
             const title = document.createElement('span');
             const remove = document.createElement('span');
+            const removeImg = document.createElement('img');
 
             const dropdown = document.createElement('div');
             dropdown.classList.add('task-dropdown');
@@ -62,12 +63,16 @@ class TaskList {
             dropdown.appendChild(desc);
 
             title.textContent = t.title;
-            remove.textContent = '✔️';
             remove.style.cursor = 'pointer';
-            remove.classList.add('task-button');
+
+            removeImg.src = 'images/cross.png';
+            removeImg.alt = 'Remove task';
+            removeImg.classList.add('task-remove-img');
+
+            remove.appendChild(removeImg);
             remove.addEventListener('click', () => this.removeTask(t.id));
 
-            
+
             task.appendChild(title);
             task.appendChild(remove);
 
@@ -75,7 +80,7 @@ class TaskList {
 
             task.classList.add('task');
 
-            
+
             task.addEventListener('mouseover', () => {
                 dropdown.style.opacity = '1';
                 dropdown.style.transform = 'translateY(0)';

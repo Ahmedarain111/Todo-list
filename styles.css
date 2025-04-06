@@ -185,18 +185,6 @@ ul > :nth-child(-n+2) {
     padding: 5px 0;
 }
 
-
-
-.task-button {
-    padding: 6px;
-    line-height: 1;
-    vertical-align: middle;
-}
-
-.task-button:hover {
-    background-color: rgb(204, 204, 204);
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -287,4 +275,18 @@ form > button, .modal-content button {
 
 button:hover {
     background: rgb(60, 60, 60);
+}
+
+.task-remove-img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.task-remove-img:hover {
+    transform: scale(1.2);
+    opacity: 1;
 }
