@@ -1,11 +1,11 @@
 class Task {
-    constructor(title, desc, priority, date, project) {
+    constructor(title, desc, priority, date, group) {
         this.title = title;
         this.desc = desc;
         this.priority = priority;
         this.date = date;
         this.status = false;
-        this.project = project
+        this.group = group
         this.id = Date.now();
     }
 }
@@ -17,8 +17,8 @@ class TaskList {
         this.view = "home";
     }
 
-    addTask(title, desc, priority, date, project) {
-        this.tasks.push(new Task(title, desc, priority, date, project));
+    addTask(title, desc, priority, date, group) {
+        this.tasks.push(new Task(title, desc, priority, date, group));
         this.displayTasks()
     }
 
@@ -37,7 +37,7 @@ class TaskList {
         } else if (this.view === "home") {
             list = this.tasks;
         } else {
-            list = this.tasks.filter(task => task.project === this.view);
+            list = this.tasks.filter(task => task.group === this.view);
         }
 
         for (let t of list) {
@@ -122,7 +122,7 @@ addButton.addEventListener('click', () => {
 
 const homeButton = document.querySelector('#home');
 const todayButton = document.querySelector('#today');
-const addProjectButton = document.querySelector('#add-project');
+const addgroupButton = document.querySelector('#add-group');
 
 homeButton.addEventListener('click', () => {
     tasksList.view = "home";
@@ -136,8 +136,8 @@ todayButton.addEventListener('click', () => {
     document.querySelector('.tasks-container h1').textContent = "Today";
 });
 
-addProjectButton.addEventListener('click', () => {
-    document.querySelector('.project-modal').style.display = 'flex';
+addgroupButton.addEventListener('click', () => {
+    document.querySelector('.group-modal').style.display = 'flex';
 });
 
 // MODAL
@@ -154,8 +154,8 @@ window.onclick = function (event) {
         closeModal();
     }
 
-    if (event.target === document.querySelector('.project-modal')) {
-        document.querySelector('.project-modal').style.display = 'none';
+    if (event.target === document.querySelector('.group-modal')) {
+        document.querySelector('.group-modal').style.display = 'none';
     }
 };
 
@@ -167,38 +167,38 @@ document.querySelector('form').addEventListener("submit", function (event) {
     const desc = document.querySelector('#desc').value;
     const priority = document.querySelector("input[name='priority']:checked")?.value;
     const date = document.querySelector('#date').value;
-    const project = document.querySelector('#project').value;
+    const group = document.querySelector('#group').value;
 
-    tasksList.addTask(title, desc, priority, date, project);
+    tasksList.addTask(title, desc, priority, date, group);
 
     document.querySelector('form').reset();
     closeModal();
 });
 
-document.querySelector('.add-project-btn').addEventListener('click', () => {
-    const name = document.querySelector('#project-name').value.trim();
+document.querySelector('.add-group-btn').addEventListener('click', () => {
+    const name = document.querySelector('#group-name').value.trim();
     if (!name) return;
 
-    const list = document.querySelector('#projects-ul');
-    const project = document.createElement('li');
-    project.textContent = name;
+    const list = document.querySelector('#groups-ul');
+    const group = document.createElement('li');
+    group.textContent = name;
 
-    project.addEventListener('click', () => {
+    group.addEventListener('click', () => {
         tasksList.view = name;
         tasksList.displayTasks();
         document.querySelector('.tasks-container h1').textContent = name;
     });
 
-    list.prepend(project);
+    list.prepend(group);
 
-    const projectInput = document.querySelector('#project');
+    const groupInput = document.querySelector('#group');
     const option = document.createElement('option');
     option.value = name;
     option.textContent = name;
-    projectInput.appendChild(option);
+    groupInput.appendChild(option);
 
-    document.querySelector('#project-name').value = '';
-    document.querySelector('.project-modal').style.display = 'none';
+    document.querySelector('#group-name').value = '';
+    document.querySelector('.group-modal').style.display = 'none';
 });
 
 

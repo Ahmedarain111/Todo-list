@@ -84,7 +84,7 @@ ul > :nth-child(-n+2) {
     background-color: #c2c2c2;   
 }
 
-.projects-list, #add-project {
+.groups-list, #add-group {
     font-size: 1.3rem !important;
     font-weight: normal !important; 
     margin-left: 16px;
