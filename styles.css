@@ -62,17 +62,26 @@ ul > :nth-child(-n+2) {
 .sidebar > ul > li {
     padding: 4px 0px;
     padding-left: 4px;
-    /* margin-right: 12px; */
-
     font-size: 1.5rem;
     font-weight: bold;
-
-
-    transition: 0.1s;
+    transition: 0.5s;
 }
 
-.sidebar > ul > li:hover {
+.sidebar > ul > li > ul > li {
+    padding: 4px 0px;
+    transition: 0.5s;
+}
+
+.sidebar > ul > li:nth-child(-n+3):hover {
     background-color: #c2c2c2;
+}
+
+.sidebar > ul > li > ul > li:hover {
+    background-color: #c2c2c2;
+}
+
+.sidebar > ul > li:nth-child(5):hover {
+    background-color: #c2c2c2;   
 }
 
 .projects-list, #add-project {

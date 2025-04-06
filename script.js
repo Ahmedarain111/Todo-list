@@ -171,19 +171,31 @@ document.querySelector('form').addEventListener("submit", function (event) {
 });
 
 document.querySelector('.add-project-btn').addEventListener('click', () => {
-    const list = document.querySelector('.projects-list');
+    const name = document.querySelector('#project-name').value.trim();
+    if (!name) return;
+
+    const list = document.querySelector('#projects-ul');
     const project = document.createElement('li');
-    
-    project.textContent = document.querySelector('#project-name').value;
-    list.appendChild(project);
+    project.textContent = name;
+
+    project.addEventListener('click', () => {
+        tasksList.view = name;
+        tasksList.displayTasks();
+        document.querySelector('.tasks-container h1').textContent = name;
+    });
+
+    list.prepend(project);
 
     const projectInput = document.querySelector('#project');
-    const projectOption = document.createElement('option')
-    projectOption.textContent = project.textContent;
-    projectInput.appendChild(projectOption);
-    
+    const option = document.createElement('option');
+    option.value = name;
+    option.textContent = name;
+    projectInput.appendChild(option);
+
+    document.querySelector('#project-name').value = '';
     document.querySelector('.project-modal').style.display = 'none';
 });
+
 
 
 const tasksList = new TaskList();
