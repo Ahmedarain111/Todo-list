@@ -55,14 +55,14 @@ ul {
 }
 
 ul > :nth-child(-n+2) {
+    margin-bottom: 12px;
     cursor: pointer;
 }
 
 .sidebar > ul > li {
-    margin-bottom: 12px;
-
+    padding: 4px 0px;
     padding-left: 4px;
-    margin-right: 12px;
+    /* margin-right: 12px; */
 
     font-size: 1.5rem;
     font-weight: bold;
